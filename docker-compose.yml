@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  restaurant-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+      - RESTAURANTS_CSV_FILE=${RESTAURANTS_CSV_FILE:-/app/restaurants.csv}
+    env_file:
+      - .env
+    volumes:
+      - ./restaurants.csv:/app/restaurants.csv:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s 
