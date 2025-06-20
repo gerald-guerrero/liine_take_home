@@ -2,13 +2,13 @@ import pytest
 from fastapi.testclient import TestClient
 from datetime import time
 
-from liine_gerald_guerreo.main import app, restaurant_service
-from liine_gerald_guerreo.parsers import (
+from liine_gerald_guerrero.main import app, restaurant_service
+from liine_gerald_guerrero.parsers import (
     parse_time_string,
     parse_restaurant_hours,
     parse_restaurants_from_csv,
 )
-from liine_gerald_guerreo.models import TimeRange
+from liine_gerald_guerrero.models import TimeRange
 
 
 @pytest.fixture

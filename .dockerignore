@@ -18,10 +18,6 @@ env/
 .env
 .env.example
 
-# Documentation
-*.md
-README*
-
 # Docker files 
 Dockerfile*
 docker-compose*
